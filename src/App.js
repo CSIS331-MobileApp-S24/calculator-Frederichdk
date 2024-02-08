@@ -4,7 +4,7 @@ import Wrapper from './components/Wrapper.js';
 
 const App =() => {
   return (
-    <div>
+    <div className='move'>
       <Wrapper/>
     </div>
   );
