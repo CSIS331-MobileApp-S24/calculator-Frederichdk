@@ -4,7 +4,7 @@ import "./Button.css";
 const Button = ({values, className, onClicked}) =>{
 
     let conditionalClass = "";
-    if (values === "=") {
+    if (className === "=") {
         conditionalClass = "equalButton";
     }
     return(
