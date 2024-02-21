@@ -6,10 +6,10 @@ function handleClick(buttonVal){
     console.log(buttonVal);
 }
 
-const ButtonBox = () =>{
+const ButtonBox = ({handleClick}) =>{
     const btnValues = [
-        ["C", "+/-", "%", "/"], 
-        ["7", "8", "9", "*"],   
+        ["C", "+-", "%", "/"], 
+        ["7", "8", "9", "X"],   
         ["4", "5", "6", "-"],    
         ["1", "2", "3", "+"],    
         ["0", ".", "="]          
@@ -21,7 +21,7 @@ const ButtonBox = () =>{
         <div className="buttonBox">
            {btnValues.flat().map((button, i) =>{
                 return(
-                    <Button key={i} values={button} className={button} onClicked={() => handleClick(button)}/>
+                    <Button key={i} values={button} className={button} onClick={handleClick}/>
                 );
            })}
         </div>
