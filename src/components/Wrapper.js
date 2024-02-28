@@ -72,44 +72,45 @@ const Wrapper = () => {
     }
   };
   const operClickerHandler = (btn) => {
-    console.log("in operClickerHandler");
     setOper(btn);
-    let ans;
+    let ans = 0;
 
-    if (btn.toString() === "+") {
-      console.log("the button is +");
+    if (btn === "+") {
       ans = res + num;
-      setRes(ans);
-      setNum(0);
-    }
-    if (btn.toString() === "-") {
-      console.log("the button is -");
-      ans = res - num;
-      setRes(ans);
-      setNum(0);
-    }
-    if (btn.toString() === "X") {
-      console.log("the button is X");
+    } else if (btn === "-") {
+      ans = res === 0 ? num : res - num;
+    } else if (btn === "X") {
       ans = res * num;
-      setRes(ans);
-      setNum(0);
-    }
-    if (btn.toString() === "/") {
-      console.log("the button is /");
+    } else if (btn === "/") {
       ans = res / num;
-      setRes(ans);
-      setNum(0);
     }
-  };
-  const equalClickerHandler = (btn) => {
-    console.log("in equalClickerHandler");
-    console.log(btn);
-    setRes(res);
+
     setNum(0);
+    setRes(ans);
   };
+  const equalClickerHandler = () => {
+    let ans = 0;
+    if (oper === "+") {
+      ans = res + num;
+    } else if (oper === "-") {
+      ans = res - num;
+    } else if (oper === "X") {
+      ans = res !== 0 ? res * num : num;
+    } else if (oper === "/") {
+      ans = res / num;
+    }
+    setNum(0);
+    setRes(ans);
+    setOper("");
+  };
+
   const decClickerHandler = (btn) => {
     console.log("in decClickerHandler");
     console.log(btn);
+    if (!num.toString().includes(".")) {
+      let newval = num + ".";
+      setNum(newval);
+    }
   };
   const numClickerHandler = (btn) => {
     console.log("in numClickerHandler");

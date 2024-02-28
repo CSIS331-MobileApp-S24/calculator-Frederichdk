@@ -1,9 +1,8 @@
-.equalButton{
-    background-color: brown;
-    grid-column: span 2;
-
+.equalButton {
+  background-color: brown;
+  grid-column: span 2;
 }
 
-.button{
-    background-color: rgb(94, 36, 201);
+.button {
+  background-color: rgb(94, 36, 201);
 }

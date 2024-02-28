@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import Wrapper from './components/Wrapper.js';
+import logo from "./logo.svg";
+import "./App.css";
+import Wrapper from "./components/Wrapper.js";
 
-const App =() => {
+const App = () => {
   return (
-    <div className='move'>
-      <Wrapper/>
+    <div className="move">
+      <Wrapper />
     </div>
   );
 };
