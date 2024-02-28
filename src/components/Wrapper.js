@@ -6,7 +6,8 @@ import ButtonBox from "./ButtonBox";
 const Wrapper = () => {
   let [num, setNum] = useState(0);
   let [res, setRes] = useState(0);
-  let [oper, setOper] = useState(0);
+  let [oper, setOper] = useState("");
+
   function onButtonClick(event) {
     // console.log(event.target.innerHTML);
     let value = event.target.innerHTML;
@@ -75,14 +76,16 @@ const Wrapper = () => {
     setOper(btn);
     let ans = 0;
 
-    if (btn === "+") {
+    if (oper === "+") {
       ans = res + num;
-    } else if (btn === "-") {
+    } else if (oper === "-") {
       ans = res === 0 ? num : res - num;
-    } else if (btn === "X") {
+    } else if (oper === "X") {
       ans = res * num;
-    } else if (btn === "/") {
+    } else if (oper === "/") {
       ans = res / num;
+    } else {
+      ans = num;
     }
 
     setNum(0);
